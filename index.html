@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Birthday Quest</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: #0b0b0f;
+      color: white;
+
+      font-family: Arial, sans-serif;
+    }
+
+    .quest-box {
+      width: 90%;
+      max-width: 500px;
+
+      padding: 40px 30px;
+      border: 1px solid #333;
+      border-radius: 20px;
+
+      background: #15151c;
+      text-align: center;
+    }
+
+    .quest-number {
+      color: #888;
+      font-size: 14px;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    .lock {
+      font-size: 55px;
+      margin: 20px 0;
+    }
+
+    .question {
+      line-height: 1.8;
+      font-size: 18px;
+      margin: 30px 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+
+      border: 1px solid #444;
+      border-radius: 10px;
+
+      background: #0d0d12;
+      color: white;
+
+      font-size: 20px;
+      text-align: center;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 12px;
+      padding: 15px;
+
+      border: none;
+      border-radius: 10px;
+
+      background: white;
+      color: black;
+
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    #message {
+      min-height: 25px;
+      margin-top: 20px;
+    }
+
+    .success {
+      color: #71ff9d;
+    }
+
+    .fail {
+      color: #ff6b6b;
+    }
+
+    #hint {
+      display: none;
+
+      margin-top: 30px;
+      padding: 20px;
+
+      border: 1px solid #71ff9d;
+      border-radius: 12px;
+
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quest-box">
+
+    <div class="quest-number">
+      BIRTHDAY QUEST // 01
+    </div>
+
+    <div class="lock" id="lock">
+      🔒
+    </div>
+
+    <h1>QUEST 01</h1>
+
+    <div class="question">
+      2011년 8월 13일이<br>
+      태어난 지 <b>1일 된 날</b>이라면,<br><br>
+
+      2026년 8월 13일은<br>
+      태어난 지 <b>며칠 된 날</b>일까?
+    </div>
+
+    <input
+      type="number"
+      id="answer"
+      placeholder="정답 입력"
+    >
+
+    <button onclick="checkAnswer()">
+      UNLOCK
+    </button>
+
+    <div id="message"></div>
+
+    <div id="hint">
+     <b>QUEST COMPLETE</b>
+     <br><br>
+     첫 번째 단서가 해제되었습니다.
+     <br><br>
+     <b>전자레인지에 돌려먹는 밥,<br>
+     그 아래를 확인해라.</b>
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function checkAnswer() {
+
+      const answer =
+        document.getElementById("answer").value;
+
+      const message =
+        document.getElementById("message");
+
+      const hint =
+        document.getElementById("hint");
+
+      const lock =
+        document.getElementById("lock");
+
+
+      if (answer === "5480") {
+
+        lock.textContent = "🔓";
+
+        message.textContent =
+          "ACCESS GRANTED";
+
+        message.className =
+          "success";
+
+        hint.style.display =
+          "block";
+
+      }
+
+      else {
+
+        message.textContent =
+          "ACCESS DENIED — 다시 시도하세요.";
+
+        message.className =
+          "fail";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
