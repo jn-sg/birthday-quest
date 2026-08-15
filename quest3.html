@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Birthday Quest 03</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: #0b0b0f;
+      color: white;
+
+      font-family: Arial, sans-serif;
+    }
+
+    .quest-box {
+      width: 90%;
+      max-width: 500px;
+
+      padding: 40px 30px;
+
+      border: 1px solid #333;
+      border-radius: 20px;
+
+      background: #15151c;
+      text-align: center;
+    }
+
+    .quest-number {
+      color: #888;
+      font-size: 14px;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .icon {
+      font-size: 55px;
+      margin: 20px 0;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-top: 0;
+    }
+
+    .bracelet {
+      margin: 25px 0;
+      padding: 20px;
+
+      border: 1px solid #71ff9d;
+      border-radius: 12px;
+
+      line-height: 1.8;
+    }
+
+    .mission {
+      margin-top: 30px;
+      padding: 22px;
+
+      background: #0d0d12;
+
+      border: 1px solid #444;
+      border-radius: 12px;
+
+      line-height: 1.8;
+    }
+
+    .mission-title {
+      color: #888;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .clue {
+      margin-top: 18px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.7;
+    }
+
+    button {
+      width: 100%;
+
+      margin-top: 25px;
+      padding: 15px;
+
+      border: none;
+      border-radius: 10px;
+
+      background: white;
+      color: black;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    #finalMission {
+      display: none;
+
+      margin-top: 30px;
+      padding: 22px;
+
+      border: 1px solid #71ff9d;
+      border-radius: 12px;
+
+      line-height: 1.8;
+    }
+
+    .final-location {
+      margin-top: 18px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quest-box">
+
+    <div class="quest-number">
+      BIRTHDAY QUEST // 03
+    </div>
+
+    <div class="icon">
+      🎁
+    </div>
+
+    <h1>ITEM ACQUIRED</h1>
+
+    <div class="bracelet">
+      <b>FIRST REWARD UNLOCKED</b>
+      <br><br>
+      첫 번째 선물을 획득했다.
+      <br>
+      하지만 아직 하나가 남아 있다.
+    </div>
+
+
+    <div class="mission">
+
+      <div class="mission-title">
+        KEY MISSION
+      </div>
+
+      <div class="clue">
+        🔑 라부부 4마리를 확인해라.
+      </div>
+
+    </div>
+
+
+    <button id="keyButton" onclick="keyFound()">
+      열쇠를 찾았다
+    </button>
+
+
+    <div id="finalMission">
+
+      <div class="mission-title">
+        FINAL REWARD LOCATION
+      </div>
+
+      <br>
+
+      🔓 열쇠 획득 확인.
+
+      <br><br>
+
+      이제 마지막 선물을 찾아라.
+
+      <div class="final-location">
+        안방 화장실의<br>
+        수건이 있는 곳을 확인해라.
+      </div>
+
+      <br>
+
+      🎁 FINAL REWARD AWAITS
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function keyFound() {
+
+      const finalMission =
+        document.getElementById("finalMission");
+
+      const button =
+        document.getElementById("keyButton");
+
+      finalMission.style.display = "block";
+
+      button.style.display = "none";
+
+    }
+
+  </script>
+
+</body>
+</html>
